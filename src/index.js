@@ -1,13 +1,15 @@
 //imports
+const dotenv = require("dotenv")
 const express = require("express");
 const mongoose = require('mongoose');
 
+dotenv.config()
+
 const app = express();
-const port = 3000;
 app.use(express.json());
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/TaskManager?directConnection=true');
+mongoose.connect(procces.env.URL_BD);
 
 //Constador do ID
 const Counter = mongoose.model('Counter', {
@@ -81,5 +83,5 @@ app.put("/:id", async (req, res) => {
 
 //Retorno ao fazer iniciar server
 app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`)
+    console.log(`Servidor rodando na porta process.env.porta`)
 });
