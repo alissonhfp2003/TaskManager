@@ -11,6 +11,7 @@ eles são instalado atravez dos comandos:
 
 npm i express
 npm i mongoose
+npm i dotenv
 
 Esse procedimento é preciso pos o Git não aceita fazer um push da pasta node_modules
 
