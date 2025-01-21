@@ -94,7 +94,7 @@
     }
 
         button.salvar{
-           background-color: #0056b3;
+           background-color:#007bff;
         }
 
         button.cancelar{
@@ -102,12 +102,15 @@
         margin-top: 10px;
         }   
   
-  button:hover {
-    background-color: #00408a;
+  button.salvar:hover{
+      background-color:#00408a;
   }
-  
-  /* Estilo do botão em estado desabilitado */
-  button:disabled {
+  button.cancelar:hover {
+    background-color: #880404;
+  }
+
+
+    button:disabled {
     background-color: #b0b0b0;
     cursor: not-allowed;
   }

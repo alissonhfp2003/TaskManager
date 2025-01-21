@@ -1,0 +1,77 @@
+.task-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-card h5 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .task-card h4 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .task-card span {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #666;
+  }
+  
+  .task-card-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .task-card-actions button,
+  .task-card-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex: 1;
+    padding: 8px 0; 
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  .task-card-actions button {
+    background-color: #01be1e;
+    color: white;
+  }
+  
+  .task-card-actions button:hover {
+    background-color: #029318;
+  }
+  
+  .task-card-actions a {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .task-card-actions a:hover {
+    background-color: #e0a800;
+  }
+  
+  .task-card-actions button:last-child {
+    background-color: #dc3545;
+  }
+  
+  .task-card-actions button:last-child:hover {
+    background-color: #a71d2a;
+  }
+  

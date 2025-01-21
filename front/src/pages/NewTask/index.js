@@ -1,33 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import api from '../../service/api';
+import { createTask } from '../../service/api';
+import { useNavigate } from 'react-router-dom';
 
 
-function App() {
-  const [id, setId] = useState('');
+function NewTask() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const navigate = useNavigate();
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    const response = await api.post('api/task', {
-      title, 
-      description, 
-      status: 'pendente'});
+    try {
+      await createTask({
+        title,
+        description,
+        status: 'pendente',
+      });
 
+      alert('Tarefa salva com sucesso!');
+      navigate('/');
+    } catch (error) {
+      console.error('Erro ao salvar a tarefa:', error);
+      alert('Ocorreu um erro ao salvar a tarefa. Tente novamente.');
+    }
   }
+
+  async function handleCancel() {
+    const confirmCancel = window.confirm('Tem certeza de que deseja cancelar? As alterações não serão salvas.');
+    if (confirmCancel) {
+      navigate('/');
+    }
+  }
+
 
   return (
     <div id="app">
       <aside>
         <strong>Nova Tarefa</strong>
         <form onSubmit={handleSubmit}>
-          <div className="bloco-id">
-            <label>ID</label>
-            <input type='text' id='Id' name='Id'  readOnly 
-            value={id}  />
-          </div>
           <div className='bloco-input'>
             <label htmlFor='Title'>Título da tarefa</label>
             <br />
@@ -45,11 +57,11 @@ function App() {
             onChange={e => setDescription(e.target.value)}/>
            </div>
           <button className='salvar' type='submit'>Salvar</button>
-          <button className='cancelar' type='submit'>Cancelar</button>
+          <button className='cancelar' type='button' onClick={handleCancel} >Cancelar</button>
         </form>
       </aside>
     </div>  
   );
 }
 
-export default App;
+export default NewTask;

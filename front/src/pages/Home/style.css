@@ -1,0 +1,55 @@
+/* src/pages/Home/style.css */
+
+/* Container principal */
+.home-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto; /* Centraliza o conteúdo na tela */
+  background-color: #f5f5f5; /* Fundo claro */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Cabeçalho das tarefas */
+.tasks-header {
+  display: flex;
+  justify-content: space-between; /* Espaço entre o título e o botão */
+  align-items: center; /* Alinha verticalmente */
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #333; /* Fundo escuro */
+  border-radius: 8px; /* Bordas arredondadas */
+  color: white;
+}
+
+/* Título */
+.tasks-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Botão "Nova" */
+.new-task-button {
+  background-color: #007bff; /* Azul */
+  color: white;
+  text-decoration: none; /* Remove o sublinhado */
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.new-task-button:hover {
+  background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+/* Conteúdo das tarefas */
+.tasks-content {
+  padding: 20px;
+  background-color: white; /* Fundo branco para destacar */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  font-size: 1rem;
+  color: #333;
+}

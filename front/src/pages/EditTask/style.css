@@ -1,0 +1,116 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f4f7fc;
+  height: 100vh;
+  padding: 20px;
+}
+
+aside {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside strong {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  display: block;
+  color: #333;
+  text-align: center;    
+}
+
+.bloco-id input {
+  width: 80px; 
+  height: 30px;
+  padding: 8px;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  background-color: #b0b0b0;
+  border-radius: 4px;
+  text-align: right; 
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.bloco-input {
+  margin-bottom: 15px;
+}
+
+
+.bloco-input label {
+  font-size: 1em;
+  color: #000000;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.bloco-input input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.bloco-input input:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+textarea {
+  width: 100%;  
+  height: 150px; 
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; 
+  
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+
+      button.salvar{
+         background-color:#007bff;
+      }
+
+      button.cancelar{
+      background-color: #ff0000;
+      margin-top: 10px;
+      }   
+
+button.salvar:hover{
+    background-color:#00408a;
+}
+button.cancelar:hover {
+  background-color: #880404;
+}
+
+
+  button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
