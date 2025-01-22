@@ -49,9 +49,9 @@ TaskManager/
 
 ### Pré-requisitos
 Certifique-se de ter instalado:
-- [Node.js](https://nodejs.org/)
-- [MongoDB](https://www.mongodb.com/)
-- [Git](https://git-scm.com/)
+- [Node.js]
+- [MongoDB]
+- [Git]
 
 ### Passos para Configuração
 
