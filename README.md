@@ -112,4 +112,3 @@ Agora você pode acessar a aplicação em `http://localhost:3000`.
 - Criar uma interface para histórico de tarefas concluídas
 
 
-Feito por Alisson Henrique
