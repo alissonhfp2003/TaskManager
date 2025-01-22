@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getAllTasks, updateTask } from '../../service/api'; 
 import './style.css';
+import {toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,7 +23,7 @@ function EditTask() {
           setTitle(task.title);
           setDescription(task.description);
         } else {
-          alert('Tarefa não encontrada.');
+          toast.error('Tarefa não encontrada.');
           navigate('/'); 
         }
       } catch (error) {
@@ -37,11 +39,11 @@ function EditTask() {
     e.preventDefault();
     try {
       await updateTask(id, { title, description }); 
-      alert('Tarefa atualizada com sucesso!');
+      toast.success('Tarefa atualizada com sucesso!');
       navigate('/'); 
     } catch (error) {
       console.error('Erro ao atualizar tarefa:', error);
-      alert('Erro ao atualizar a tarefa.');
+      toast.error('Erro ao atualizar a tarefa.');
     }
   };
 

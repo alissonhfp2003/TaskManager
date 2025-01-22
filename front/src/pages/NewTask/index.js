@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import { createTask } from '../../service/api';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function NewTask() {
@@ -19,11 +21,11 @@ function NewTask() {
         status: 'pendente',
       });
 
-      alert('Tarefa salva com sucesso!');
+      toast.success('Tarefa salva com sucesso!');
       navigate('/');
     } catch (error) {
       console.error('Erro ao salvar a tarefa:', error);
-      alert('Ocorreu um erro ao salvar a tarefa. Tente novamente.');
+      toast.error('Ocorreu um erro ao salvar a tarefa. Tente novamente.');
     }
   }
 
