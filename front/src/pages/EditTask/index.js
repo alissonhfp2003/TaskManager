@@ -3,17 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getAllTasks, updateTask } from '../../service/api'; 
 import './style.css';
 
-function EditTask(){
- const {id} = useParams()
-  console.log(id)
-}
 
-export default EditTask;
 
-/*function EditTask() {
+function EditTask() {
   const { id } = useParams();
   const navigate = useNavigate();
-console.log(id)
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -101,4 +95,5 @@ console.log(id)
     </div>
   );
 }
-*/
+
+export default EditTask;

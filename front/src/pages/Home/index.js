@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
-import { getAllTasks, deleteTask } from '../../service/api';
+import { getAllTasks, deleteTask, updateTask} from '../../service/api';
 import TaskCard from '../../components/TaskCard';
 
 function Home() {
@@ -31,6 +31,16 @@ function Home() {
     }
   };
 
+  const handleUpdateTask = async () => {
+    try {
+        const tasksData = await getAllTasks(); 
+        const pendingTasks = tasksData.filter((task) => task.status === 'pendente');
+        setTasks(pendingTasks); 
+    } catch (error) {
+        console.error('Erro ao atualizar tarefas:', error);
+    }
+};
+
   return (
     <div className="home-container">
       <div className="tasks-header">
@@ -46,6 +56,7 @@ function Home() {
               title={task.title}
               description={task.description}
               onDelete={handleDeleteTask}
+              onUpdate={handleUpdateTask}
             />
             ))}
           </ul>

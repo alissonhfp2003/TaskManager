@@ -2,8 +2,10 @@ import React from "react";
 import {BsPen, BsCheck  , BsFillTrashFill } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import './style.css';
+import { updateTask } from "../../service/api";
 
-function TaskCard({ id, title, description, status, onDelete }) {
+
+function TaskCard({ id, title, description, status, onDelete, onUpdate }) {
 
     
     const handleDelete = async () => {
@@ -18,13 +20,26 @@ function TaskCard({ id, title, description, status, onDelete }) {
         }
     };
 
+    const handleConcluir = async() => {
+        const confirmConcluir = window.confirm('Tem certeza que deseja concluir esta tarefa');
+        if (confirmConcluir) {
+            try{
+                await updateTask(id, { status: 'concluído' });
+                alert('Tarefa concluida!');
+                onUpdate();
+            }  catch (error) {
+                alert('Erro ao excluir tarefa.');
+            }
+    }
+};
+
     return (
         <div className="task-card">
             <h5>ID: {id}</h5>
             <h4>{title}</h4>
             <span>{description}</span>
             <div className="task-card-actions">
-                <button>
+                <button onClick={handleConcluir}>
                     <BsCheck/>Concluir
                 </button>
                 <Link to={`/EditTask/${id}`}>

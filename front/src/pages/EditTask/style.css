@@ -6,7 +6,7 @@
   font-family: 'Arial', sans-serif;
 }
 
-#app {
+#edit-task {
   display: flex;
   justify-content: center;
   align-items: flex-start;
